@@ -1,0 +1,94 @@
+﻿@{
+    ViewData["Title"] = "Список кроссовок";
+    Layout = null;
+}
+<html>
+<head>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <style>
+        body {
+            font-family: 'Courier New', sans-serif;
+            background-color: #a1a1a1;
+        }
+
+        fieldset {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #2e2d2d;
+            box-shadow: 0px 0px 10px white;
+            color: white;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 28px;
+            text-transform: uppercase;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        p {
+            margin: 10px 0;
+            font-size: 16px;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #cccccc;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+
+        label {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        input[type="submit"] {
+            background-color: #2e2d2d;
+            color: #ffffff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+        }
+
+        .message {
+            margin-top: 10px;
+            text-align: center;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <fieldset>
+        <h1>Регистрация</h1>
+        <form method="post">
+            <p>Имя</p>
+            <input type="text" maxlength="20" name="name" id="name" />         
+            <p>Телефон</p>
+            <input type="text" maxlength="11" name="phone" id="phone" />
+            <div class="form-group">
+            <p>Пароль</p>
+            <input type="password" name="password" id="passsword" class="form-control" placeholder="Password" />
+            </div>
+
+            <input type="submit" value="Зарегистрироваться" />
+        </form>
+        @if (!string.IsNullOrEmpty(ViewBag.Message))
+        {
+            <script>alert('@Html.Raw(ViewBag.Message)');</script>
+        }
+    </fieldset>
+</body>
+</html>
+
+

@@ -1,0 +1,67 @@
+﻿@model LR6_.Models.Shoes
+@{
+    ViewData["Title"] = "Shoes";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AirLove</title>
+    <style>
+        body {
+            font-family: 'Courier New', sans-serif;
+            background: rgb(173,173,173);
+            background: radial-gradient(circle, rgba(173,173,173,0.6755952380952381) 0%, rgba(87,87,87,1) 100%);
+        }
+
+        h3 {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        p {
+            text-align: center;
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        form {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            width: 300px;
+            border: 1px solid #2e2d2d;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            background-color: #2e2d2d;
+            color: #ffffff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+            input[type="submit"]:hover {
+                background-color: #2e2d2d;
+            }
+    </style>
+</head>
+<body>
+    <h3>Making an order</h3>
+    <p>Model @Model.Company</p>
+    <p>Name @Model.Name</p>
+    <p>Price @Model.Price</p>
+    <form method="post" action="@Url.Action("Buy1", "Buy")">
+        <input type="text" placeholder="Your address" name="address" />
+        <input type="submit" value="To order" />
+    </form>
+
+</body>
+</html>
